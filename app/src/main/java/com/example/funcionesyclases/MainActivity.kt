@@ -90,9 +90,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clases(){
-        val alumno1 = Estudiante("Miguel",25, arrayOf("Java","PHP"))
+        val alumno1 = Estudiante("Rodrigo",25,
+            arrayOf(Estudiante.programacion.JAVA,Estudiante.programacion.PHP))
         println(alumno1.nombre)
+        alumno1.edad = 30
+        println(alumno1.edad)
         alumno1.codigo()
+
+        val alumno2 = Estudiante("Dayana",21,
+            arrayOf(Estudiante.programacion.KOTLIN), arrayOf(alumno1))
+        println(alumno2.nombre)
+        alumno2.codigo()
+
+        println("${alumno2.amigo?.first()?.nombre} es amigo de ${alumno2.nombre}")
+
+
+
     }
 
 }
